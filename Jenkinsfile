@@ -29,15 +29,15 @@ pipeline {
                 }
             }
         }
-        stage('Sonarqube analysis') {
-            steps {
-                script {
-                    withSonarQubeEnv('sonar'){
-                        sh 'mvn sonar:sonar -DskipTests'
-                     }
-                 }
-            }
-        }
+        //stage('Sonarqube analysis') {
+        //    steps {
+        //        script {
+        //            withSonarQubeEnv('sonar'){
+          //              sh 'mvn sonar:sonar -DskipTests'
+         //            }
+          //       }
+        //    }
+      //  }
         // stage('Artifactory') {
         //     steps {
         //         script {
