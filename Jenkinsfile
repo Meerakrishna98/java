@@ -5,7 +5,7 @@ pipeline {
 
     environment {
         CI = 'true'
-        registry = 'docker-services-training/aleesha/'
+        registry = 'docker-awskeypair.pem/Meerakrishna/'
         }
     stages {
         stage('Clone') {
