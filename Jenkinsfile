@@ -1,7 +1,7 @@
   
 pipeline {
     agent {label 'agent' }
-    tools { maven 'maven'}
+    tools { MAVEN 'maven'}
 
     environment {
         CI = 'true'
