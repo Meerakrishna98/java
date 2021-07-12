@@ -1,5 +1,5 @@
 pipeline {
-   // agent {label 'agent' }
+    agent {label 'agent' }
     tools { maven 'maven'}
 
     environment {
