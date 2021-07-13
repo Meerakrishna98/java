@@ -51,9 +51,7 @@ pipeline {
         // }
         stage('Email Notification'){ 
             steps {
-                mail bcc: '', body: '''HI
-Welcome to jenkins email alerts
-Thankyou''', cc: 'mkmanakkalath31@gmail.com, nandaardra@gmail.com', from: '', replyTo: '', subject: 'Email notification from jenkins', to: 'meerakrishna19mr@gmail.com'}
+                mail bcc: '', body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', cc: 'nandaardra@gmail.com, mkmanakkalath31@gmail.com', from: '', replyTo: '', subject: 'Email Notification from Jenkins', to: 'meerakrishna19mr@gmail.com'
         }
 
     }
