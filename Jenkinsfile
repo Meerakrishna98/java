@@ -50,9 +50,11 @@ pipeline {
         //     }
         // }
         stage('Email Notification'){ 
-        mail bcc: '', body: '''HI
+            steps {
+                mail bcc: '', body: '''HI
 Welcome to jenkins email alerts
 Thankyou''', cc: 'mkmanakkalath31@gmail.com, nandaardra@gmail.com', from: '', replyTo: '', subject: 'Email notification from jenkins', to: 'meerakrishna19mr@gmail.com'}
+        }
 
     }
 }
