@@ -6,6 +6,7 @@ pipeline {
         CI = 'true'
         registry = 'docker-awskeypair.pem/Meerakrishna/'
         }
+    stages {
         stage('Clone') {
             steps {
                 checkout scm
@@ -14,7 +15,6 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    //S
                     sh 'mvn -B -DskipTests clean package'
                 }
             }
@@ -25,19 +25,19 @@ pipeline {
             }
             post {
                 always {
-                    junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
+                    junit 'target/surefire-reports/*.xml'
                 }
             }
         }
-        //stage('Sonarqube analysis') {
-        //    steps {
-        //        script {
-        //            withSonarQubeEnv('sonar'){
-          //              sh 'mvn sonar:sonar -DskipTests'
-         //            }
-          //       }
-        //    }
-      //  }
+       // stage('Sonarqube analysis') {
+         //   steps {
+           //     script {
+             //       withSonarQubeEnv('sonar'){
+               //         sh 'mvn sonar:sonar -DskipTests'
+                 //    }
+                 //}
+            //}
+        //}
         // stage('Artifactory') {
         //     steps {
         //         script {
@@ -49,7 +49,6 @@ pipeline {
         //         }
         //     }
         // }
-        
-}
 
     }
+}
